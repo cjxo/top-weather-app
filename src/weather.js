@@ -8,7 +8,7 @@ function getDataFromForcastDay(forcastDay) {
     const { text: conditionName, icon: conditionPng } = forcastDay.day.condition;
     return {
         maxtemp_c, maxwind_kph, avghumidity,
-        conditionName, conditionPng,
+        conditionName, conditionPng: "https://" + conditionPng.slice(2),
         date: format(forcastDay.date, "EEEE, MMMM dd"),
         day: format(forcastDay.date, "EEEE"),
         rainChance: forcastDay.day.daily_chance_of_rain,
@@ -17,7 +17,7 @@ function getDataFromForcastDay(forcastDay) {
 }
 
 async function getForcastFromApi(place) {
-    const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${place}&days=7&aqi=no&alerts=no`);
+    const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${place}&days=7&aqi=no&alerts=no`, { mode: "cors" });
     if (response.ok) {
         const json = await response.json();
         return json;
