@@ -1,0 +1,138 @@
+:root {
+    --main-bg-colour: hsl(187, 14%, 89%);
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+    background: linear-gradient(hsl(175, 29%, 70%), hsl(187, 14%, 89%));
+    background-attachment: fixed;
+    padding: 16px;
+    margin: 0px;
+
+    display: flex;
+    justify-content: center;
+}
+
+input, button {
+    outline: none;
+    border: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app-container {
+    max-width: 1200px;
+    width: 100%;
+
+    gap: 48px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#search-city {
+    background-image: url("./res/magnify.svg");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    padding: 8px;
+    border-radius: 4px;
+    width: 612px;
+}
+
+.location-details > img {
+    width: 24px;
+    margin-right: 16px;
+}
+
+.weather-info-container {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.weather-overview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+}
+
+.location-name {
+    font-size: 32px;
+}
+
+.icon-and-temp {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    > img {
+        width: 64px;
+    }
+
+    > span {
+        font-size: 32px;
+    }
+}
+
+.weather-state {
+    font-size: 16px;
+}
+
+.weather-stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.weather-stats > div {
+    display: flex;
+    align-items: center;
+    color: hsl(190deg, 35%, 40%);
+
+    > img {
+        width: 24px;
+        margin-right: 8px;
+    }
+
+    > span > span:nth-child(2) {
+        color: hsl(170deg, 90%, 10%);
+        margin-left: 6px;
+    }
+}
+
+.forecasts-cards {
+    display: flex;
+    gap: 8px;
+}
+
+.forecast-card {
+    box-sizing: border-box;
+    border: 1px solid hsl(175deg, 30%, 76%);
+    padding: 24px;
+    border-radius: 16px;
+    background-color: hsl(175deg, 30%, 76%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+}
+
+.forecast-card:hover, .selected {
+    background-color: hsl(168deg, 40%, 70%);
+    box-shadow: 1px 1px 4px 0px hsl(160deg, 45%, 60%);
+    border: 1px solid hsl(155deg, 50%, 65%);
+}
+
+.forecast-card:active {
+    background-color:  hsl(160deg, 45%, 60%);
+    box-shadow: 1px 1px 4px 0px hsl(155deg, 50%, 65%);
+    border: 1px solid hsl(150deg, 55%, 70%);
+}
